@@ -13,19 +13,9 @@ class GoalsView(generic.ListView):
     def get_queryset(self):
         return Goal.objects.order_by('-priority')[:5]
 
-#def goals(request):
-#    return render(request, 'tm/goals.html', {'goal_list': Goal.objects.order_by('-priority')[:5]})
-
 class PlanView(generic.DetailView):
     template_name = 'tm/plan.html'
     model = Goal
-
-#def plan(request, goal_id):
-#    try:
-#        goal = Goal.objects.get(pk=goal_id)
-#    except Goal.DoesNotExist:
-#        raise Http404("Question does not exist")
-#    return render(request, 'tm/plan.html', {'goal': goal})
 
 def add_comment(request, goal_id):
     goal = get_object_or_404(Goal, pk=goal_id)

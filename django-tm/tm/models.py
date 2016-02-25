@@ -27,6 +27,3 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment_text
-
-
-#   votes = models.IntegerField(default=0)

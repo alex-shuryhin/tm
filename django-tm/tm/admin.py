@@ -2,13 +2,6 @@ from django.contrib import admin
 
 from .models import Goal, Plan, Comments
 
-#class PlanInLine(admin.StackedInline):
-#    model = Plan
-#    extra = 1
-
-#class GoalAdmin(admin.ModelAdmin):
-#   inlines = [PlanInLine]
-
 class GoalAdmin(admin.ModelAdmin):
     search_fields = ['goal_text']
 
